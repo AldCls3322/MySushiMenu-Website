@@ -6,9 +6,6 @@ import { GiSushis } from 'react-icons/gi';
 const Sidebar = ({isOpen, toggle}) => {
     return (
         <Container isOpen={isOpen} onClick={toggle}>
-            <Icon onClick={toggle}>
-                <CloseIcon />
-            </Icon>
             <Menu>
                 <SbLink to="/">Sushi</SbLink>
                 <SbLink to="/">Teppanyaki</SbLink>
@@ -16,7 +13,6 @@ const Sidebar = ({isOpen, toggle}) => {
             </Menu>
             <BottonWrap>
                 <Route to="/">Order Now</Route>
-
             </BottonWrap>
         </Container>
     )
@@ -26,7 +22,7 @@ export default Sidebar
 
 const Container = styled.aside`
     position: fixed;
-    z-index: 5;
+    z-index: 1;
     top: 0;
     width: 350px;
     height: 100%;
@@ -34,7 +30,7 @@ const Container = styled.aside`
     display: grid;
     align-items: center;
 
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.8);
 
     transition: 0.3s ease-in-out;
     right: ${ ({isOpen}) => (isOpen ? '0': '-1000px') };
@@ -42,24 +38,6 @@ const Container = styled.aside`
     @media screen and (max-width: 400px) {
         width: 100%;
     }
-`
-
-const Icon = styled.div`
-    position: absolute;
-    top: 1.2rem;
-    right: 1.5rem;
-
-    border: transparent;
-
-    background: transparent;
-    font-size: 2rem;
-
-    cursor: pointer;
-    outline: none;
-`
-
-const CloseIcon = styled(GiSushis)`
-    color: white; // #80b918;
 `
 
 const Menu = styled.div`

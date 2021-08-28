@@ -19,7 +19,7 @@ export default Navbar
 
 const NavHeader = styled.div`
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     height: 80px;
     width: 100vw;
     display: flex;
