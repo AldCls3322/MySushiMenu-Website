@@ -18,11 +18,14 @@ const Navbar = () => {
 export default Navbar
 
 const NavHeader = styled.div`
+    position: absolute;
+    z-index: 1;
     height: 80px;
+    width: 100vw;
     display: flex;
     justify-content: center;
 
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.5);
     color: white;
     font-weight: 700;
 `
