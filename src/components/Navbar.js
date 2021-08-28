@@ -25,6 +25,8 @@ const NavHeader = styled.div`
     display: flex;
     justify-content: center;
 
+    border-bottom-width: 1px solid rbga(255, 255, 255, 0.8);
+
     background: rgba(0,0,0,0.5);
     color: white;
     font-weight: 700;
