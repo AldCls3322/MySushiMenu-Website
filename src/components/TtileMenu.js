@@ -58,7 +58,7 @@ const Items = styled.div`
 const Title = styled.div`
     font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 1rem;
-    box-shadow: 3px 5px #04724d;  // #759319
+    box-shadow: 3px 5px #04724d; // #5e60ce; // #2b9348;  // #759319
     letter-spacing: 3px;
 `
 

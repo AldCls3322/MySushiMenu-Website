@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import {NavLink as Link} from 'react-router-dom';
 import { GiSushis } from 'react-icons/gi';
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
     return (
         <NavHeader>
             <NavLink to='/'>SUSHI</NavLink>
-            <NavIcon>
+            <NavIcon  onClick={toggle}>
                 <p>MENU</p>
                 <Icon />
             </NavIcon>
@@ -25,7 +25,7 @@ const NavHeader = styled.div`
     display: flex;
     justify-content: center;
 
-    border-bottom-width: 1px solid rbga(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 
     background: rgba(0,0,0,0.5);
     color: white;
