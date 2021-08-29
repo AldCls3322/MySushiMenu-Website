@@ -62,7 +62,7 @@ const Card = styled.div`
 const CardImg = styled.img`
     height: 300px;
 
-    box-shadow: 8px 8px #FDC500;
+    box-shadow: 8px 8px #04724d;
 
     min-width: 300px;
     max-width: 100%;

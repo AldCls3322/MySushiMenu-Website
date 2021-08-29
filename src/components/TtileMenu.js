@@ -17,7 +17,6 @@ const TtileMenu = () => {
 export default TtileMenu
 
 const Container = styled.div`
-    position: absolute;
     height: 100vh;
     width: 100vw;
 
