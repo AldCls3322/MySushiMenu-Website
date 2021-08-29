@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { GiSushis } from 'react-icons/gi';
+import { FaTimes } from 'react-icons/fa';
 
 const Sidebar = ({isOpen, toggle}) => {
     return (
         <Container isOpen={isOpen} onClick={toggle}>
+            <Icon onClick={toggle}>
+                <CloseIcon />
+            </Icon>
             <Menu>
                 <SbLink to="/">Sushi</SbLink>
                 <SbLink to="/">Teppanyaki</SbLink>
@@ -38,6 +41,24 @@ const Container = styled.aside`
     @media screen and (max-width: 400px) {
         width: 100%;
     }
+`
+
+const Icon = styled.div`
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.5rem;
+
+    border: transparent;
+    
+    background: transparent;
+    font-size: 2rem;
+    
+    cursor: pointer;
+    outline: none;
+`
+
+const CloseIcon = styled(FaTimes)`
+    color: white;
 `
 
 const Menu = styled.div`

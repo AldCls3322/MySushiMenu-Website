@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import FeaturePic from '../imgs/marina-grynykha-hbcKVe0_Jg8-unsplash.jpg';
+import FeaturePic from '../imgs/lili-liu-5PQpACifvuA-unsplash.jpg';
 
 const Feature = () => {
     return (
@@ -45,14 +45,14 @@ const FtButton = styled.button`
     padding: 0.6rem 3rem;
     border: none;
 
-    background: #ffc500;
+    background: #80b918;
     color: #000;
     font-size: 1.4rem;
 
     transition: 0.2s ease-out;
 
     &:hover{
-        background: #e31837;
+        background: #007f5f;
         color: #fff;
 
         transition: 0.2s ease-out;
