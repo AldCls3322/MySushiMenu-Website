@@ -5,9 +5,9 @@ import FeaturePic from '../imgs/lili-liu-5PQpACifvuA-unsplash.jpg';
 const Feature = () => {
     return (
         <Container>
-            <h1>Sushi of the Day</h1>
-            <p>Smoked salmon topped with 24 carat gold dust.</p>
-            <FtButton>Order Now</FtButton>
+            <h1>Centerpiece</h1>
+            <p>Smoked Salmon and Shrimp Nigiri.</p>
+            <FtButton>Try it Now</FtButton>
         </Container>
     )
 }
@@ -17,6 +17,7 @@ export default Feature
 const Container = styled.div`
     height: 100vh;
     max-height: 500px;
+    width: 100vw;
 
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@ const Container = styled.div`
 
     background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url(${FeaturePic});
     background-position: center;
-    bakcground-size: cover;
+    background-size: cover;
     color: #fff;
 
     text-align: center;

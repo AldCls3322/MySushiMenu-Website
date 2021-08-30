@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import {
     FaFacebook,
-    FaInstagram,
-    FaYoutube,
-    FaTwitter,
+    FaGithub,
     FaLinkedin
 } from 'react-icons/fa';
 
@@ -15,19 +13,13 @@ const Footer = () => {
             <SocialMedia>
                 <SocialLogo to="/">Sushi</SocialLogo>
                 <SocialIcon>
-                    <SocialIconLink href="/" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
+                    <SocialIconLink href="https://www.facebook.com/profile.php?id=100010433581661" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
                         <FaFacebook />
                     </SocialIconLink>
-                    <SocialIconLink href="/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-                        <FaInstagram />
+                    <SocialIconLink href="https://github.com/AldCls3322" target="_blank" aria-label="Github" rel="noopener noreferrer">
+                        <FaGithub />
                     </SocialIconLink>
-                    <SocialIconLink href="/" target="_blank" aria-label="Youtube" rel="noopener noreferrer">
-                        <FaYoutube />
-                    </SocialIconLink>
-                    <SocialIconLink href="/" target="_blank" aria-label="Twitter" rel="noopener noreferrer">
-                        <FaTwitter />
-                    </SocialIconLink>
-                    <SocialIconLink href="/" target="_blank" aria-label="Linkedin" rel="noopener noreferrer">
+                    <SocialIconLink href="http://linkedin.com/in/aldo-celis-cordova-3933431b7" target="_blank" aria-label="Linkedin" rel="noopener noreferrer">
                         <FaLinkedin />
                     </SocialIconLink>
                 </SocialIcon>
@@ -39,7 +31,7 @@ const Footer = () => {
 export default Footer
 
 export const Container = styled.footer`
-    max-width: 100vw;
+    width: 100vw;
 
     padding: 16px 24px;
     display: flex;

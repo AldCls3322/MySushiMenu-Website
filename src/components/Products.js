@@ -14,7 +14,6 @@ const Products = ({heading, data}) => {
                                 <CardTitle>{products.name}</CardTitle>
                                 <CardDesc>{products.desc}</CardDesc>
                                 <CardPrice>{products.price}</CardPrice>
-                                <CardButton>{products.button}</CardButton>
                             </CardInfo>
                         </Card>
                     );
@@ -70,7 +69,7 @@ const CardImg = styled.img`
 
 const CardTitle = styled.h2`
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 `
 
 const CardInfo = styled.div`
@@ -81,6 +80,7 @@ const CardInfo = styled.div`
     padding: 2rem;
 
     text-align: center;
+    font-size: 1.3rem;
 `
 
 const CardDesc = styled.p`
@@ -97,7 +97,7 @@ const CardButton = styled.button`
     border: none;
     padding: 1rem 4rem;
 
-    background: #e31837;
+    background: #007f5f;
     color: #fff;
 
     font-size: 1rem;
@@ -105,7 +105,7 @@ const CardButton = styled.button`
     transition: 0.2 ease-out;
 
     &:hover{
-        background: #ffc500;
+        background: #80b918;
         color: #000;
 
         transition: 0.2s ease-out;
