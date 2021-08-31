@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import ImgTitle from '../imgs/sushi-title.jpg';
 
-const TtileMenu = () => {
+const TitleMenu = ({goToSushiSection}) => {
     return (
         <Container>
             <Items>
                 <Title>KOMEROBI SUSHI</Title>
                 <TextP>Get the best experience in just one bite</TextP>
-                <OrderButton>Place Your Order</OrderButton>
+                <OrderButton onClick={goToSushiSection}>Place Your Order</OrderButton>
             </Items>
         </Container>
     )
 }
 
-export default TtileMenu
+export default TitleMenu
 
 const Container = styled.div`
     height: 100vh;

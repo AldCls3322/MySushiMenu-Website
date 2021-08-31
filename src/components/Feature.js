@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import FeaturePic from '../imgs/lili-liu-5PQpACifvuA-unsplash.jpg';
+import FeaturePic from '../imgs/salmon&shrimp-nigiri.jpg';
 
-const Feature = () => {
+const Feature = ({scrollToTop}) => {
     return (
         <Container>
             <h1>Centerpiece</h1>
             <p>Smoked Salmon and Shrimp Nigiri.</p>
-            <FtButton>Try it Now</FtButton>
+            <FtButton onClick={scrollToTop}>Try it Now</FtButton>
         </Container>
     )
 }

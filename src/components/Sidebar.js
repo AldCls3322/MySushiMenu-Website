@@ -3,14 +3,26 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
-const Sidebar = ({isOpen, toggle}) => {
+const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
     return (
+        visibility ? 
         <Container isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
                 <CloseIcon />
             </Icon>
             <Menu>
-                <SbLink to="/">Sushi</SbLink>
+                <SbLink onClick={goToSushiSection}>Sushi</SbLink>
+                <SbLink to="/">Teppanyaki</SbLink>
+                <SbLink to="/">Full Menu</SbLink>
+            </Menu>
+            <BottonWrap>
+                <Route to="/">Order Now</Route>
+            </BottonWrap>
+        </Container>
+        :
+        <Container isOpen={isOpen} onClick={toggle}>
+            <Menu>
+                <SbLink onClick={goToSushiSection}>Sushi</SbLink>
                 <SbLink to="/">Teppanyaki</SbLink>
                 <SbLink to="/">Full Menu</SbLink>
             </Menu>
@@ -45,7 +57,7 @@ const Container = styled.aside`
 
 const Icon = styled.div`
     position: absolute;
-    bottom: 1.2rem;
+    top: 1.2rem;
     right: 1.5rem;
 
     border: transparent;

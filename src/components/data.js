@@ -1,5 +1,5 @@
-import product1 from '../imgs/luigi-pozzoli-wmPDe9OnXT4-unsplash.jpg'
-import product2 from '../imgs/marina-grynykha-FBgCgJhPO2I-unsplash.jpg'
+import product1 from '../imgs/salmon-sushi.jpg'
+import product2 from '../imgs/salmon2-sushi.jpg'
 
 export const products = [
     {
