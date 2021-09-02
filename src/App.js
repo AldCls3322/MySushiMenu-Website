@@ -9,7 +9,7 @@ import Sidebar from "./components/Sidebar";
 import TitleMenu from "./components/TitleMenu";
 import { GlobalStyle } from "./globalStyles";
 import { useWindowScroll } from "react-use";
-import database from "./firebase/config";
+// import database from "./firebase/config";
 
 function App() {
   const SushiSection = useRef(null);
@@ -36,25 +36,24 @@ function App() {
     setIsOpen(!isOpen)
   }
 
-
-  const [japaneseFood, setJapaneseFood] = useState([])
-  const getJapaneseFood = () => {
-    database.collection('japaneseFood').onSnapshot((snapshot) => {
-      setJapaneseFood(snapshot.docs.map((doc) => {
-        return { id: doc.id, name: doc.data().name}
-      }))
-    })
-  }
-  useEffect(() => {
-    getJapaneseFood();
-  }, [])
+  // const [japaneseFood, setJapaneseFood] = useState([])
+  // const getJapaneseFood = () => {
+  //   database.collection('japaneseFood').onSnapshot((snapshot) => {
+  //     setJapaneseFood(snapshot.docs.map((doc) => {
+  //       return { id: doc.id, name: doc.data().name}
+  //     }))
+  //   })
+  // }
+  // useEffect(() => {
+  //   getJapaneseFood();
+  // }, [])
 
   return (
     <Router>
       <GlobalStyle />
       <Navbar toggle={toggle}/>
       <Sidebar isOpen={isOpen} toggle={toggle} goToSushiSection={goToSushiSection} visibility={visible}/>
-      <TitleMenu goToSushiSection={goToSushiSection} japaneseFood={japaneseFood}/>
+      <TitleMenu goToSushiSection={goToSushiSection} />
       <Products ref={SushiSection} heading="Choose your favorite" data={products}/>
       <Feature scrollToTop={scrollToTop}/>
       <Footer />

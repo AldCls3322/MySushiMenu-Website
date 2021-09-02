@@ -1,19 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
+import database from '../firebase/config';
 
 const Products = ({heading, data}) => {
+    const [docs, setDocs] = useState([]);
+
+    useEffect(() => {
+        database.collection('sushiMenu')
+            .onSnapshot((snap) => { // use 'onSnapshot' to get all information of the firebase data in that instant, and repeates this function everytime the database data changes
+                let document = []; // creates an array of objects that are our images images
+                snap.forEach(doc => {
+                    document.push({...doc.data(), id: doc.id}) // adds the data and id of each image in the database and saves it on the previously created array called 'document'
+                });
+                setDocs(document); // places the document array onto the 'docs' created in line 5
+            });
+    }, ['sushiMenu']) // the dependecies that changes are written inside the '[]', this case its 'collection'}
+
     return (
         <Container>
             <Heading>{heading}</Heading>
             <Wrapper>
-                { data.map( (products, index) => {
+                { docs && docs.map( (doc) => {
                     return (
-                        <Card key={index}>
-                            <CardImg src={products.img} alt={products.alt} />
+                        <Card key={doc.id}>
+                            <CardImg src={doc.img} alt={doc.alt} />
                             <CardInfo>
-                                <CardTitle>{products.name}</CardTitle>
-                                <CardDesc>{products.desc}</CardDesc>
-                                <CardPrice>{products.price}</CardPrice>
+                                <CardTitle>{doc.name}</CardTitle>
+                                <CardDesc>{doc.desc}</CardDesc>
+                                <CardPrice>{doc.price}</CardPrice>
                             </CardInfo>
                         </Card>
                     );

@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ImgTitle from '../imgs/sushi-title.jpg';
+import database from '../firebase/config';
 
 const TitleMenu = ({goToSushiSection}) => {
+    // let { extraImagesID } = useParams();
+    // const [ extraImages, setExtraImages ] = useState([]);
+    // const getExtraImages = () => {
+    //     database.collection('menuFeatures')
+    //     .doc('h9ced4u4qRMwCvsDyni9')
+    //     .onSnapshot((snapshot) => {
+    //         let ImgTitle = snapshot.docs[0][1];
+    //     })
+    // }
+    // useEffect(() => {
+    //     getExtraImages();
+    // }, ['h9ced4u4qRMwCvsDyni9'])
+
+    // var ImgTitle = database.collection('menuFeatures').doc('h9ced4u4qRMwCvsDyni9');
+
     return (
         <Container>
             <Items>
