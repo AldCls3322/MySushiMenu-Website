@@ -12,8 +12,8 @@ const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
             </Icon>
             <Menu>
                 <SbLink onClick={goToSushiSection}>Sushi</SbLink>
-                <SbLink to="/">Teppanyaki</SbLink>
-                <SbLink to="/">Full Menu</SbLink>
+                <SbLink to="/">Nigiri</SbLink>
+                <SbLink onClick={goToSushiSection}>Full Menu</SbLink>
             </Menu>
             <BottonWrap>
                 <Route to="/">Order Now</Route>
@@ -23,8 +23,8 @@ const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
         <Container isOpen={isOpen} onClick={toggle}>
             <Menu>
                 <SbLink onClick={goToSushiSection}>Sushi</SbLink>
-                <SbLink to="/">Teppanyaki</SbLink>
-                <SbLink to="/">Full Menu</SbLink>
+                <SbLink to="/">Nigiri</SbLink>
+                <SbLink onClick={goToSushiSection}>Full Menu</SbLink>
             </Menu>
             <BottonWrap>
                 <Route to="/">Order Now</Route>

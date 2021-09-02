@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useRef } from "react";
+import React, {useState, useEffect, createRef } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { products } from "./components/data";
 import Feature from "./components/Feature";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -12,7 +11,7 @@ import { useWindowScroll } from "react-use";
 // import database from "./firebase/config";
 
 function App() {
-  const SushiSection = useRef(null);
+  const SushiSection = createRef();
 
   const goToSushiSection = () => window.scrollTo( {top: SushiSection.current.offsetTop , behavior: "smooth"} );
   // window.scrollTo( {top: SushiSection.current.offsetTop , behavior: "smooth"} );
@@ -54,7 +53,7 @@ function App() {
       <Navbar toggle={toggle}/>
       <Sidebar isOpen={isOpen} toggle={toggle} goToSushiSection={goToSushiSection} visibility={visible}/>
       <TitleMenu goToSushiSection={goToSushiSection} />
-      <Products ref={SushiSection} heading="Choose your favorite" data={products}/>
+      <Products heading="Our Artwork Sushi" collection="sushiMenu" ref={SushiSection}/>
       <Feature scrollToTop={scrollToTop}/>
       <Footer />
     </Router>

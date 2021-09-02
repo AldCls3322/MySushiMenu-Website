@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, forwardRef} from 'react'
 import styled from 'styled-components';
 import database from '../firebase/config';
 
-const Products = ({heading, data}) => {
+const Products = ({heading, collection}, ref) => {
     const [docs, setDocs] = useState([]);
 
     useEffect(() => {
-        database.collection('sushiMenu')
+        database.collection(collection)
             .onSnapshot((snap) => { // use 'onSnapshot' to get all information of the firebase data in that instant, and repeates this function everytime the database data changes
                 let document = []; // creates an array of objects that are our images images
                 snap.forEach(doc => {
@@ -14,10 +14,10 @@ const Products = ({heading, data}) => {
                 });
                 setDocs(document); // places the document array onto the 'docs' created in line 5
             });
-    }, ['sushiMenu']) // the dependecies that changes are written inside the '[]', this case its 'collection'}
+    }, [collection]) // the dependecies that changes are written inside the '[]', this case its 'collection'}
 
     return (
-        <Container>
+        <Container ref={ref}>
             <Heading>{heading}</Heading>
             <Wrapper>
                 { docs && docs.map( (doc) => {
@@ -37,7 +37,9 @@ const Products = ({heading, data}) => {
     )
 }
 
-export default Products
+const forwardProducts = forwardRef(Products)
+
+export default forwardProducts
 
 const Container = styled.div`
     width: 100vw;
@@ -45,7 +47,7 @@ const Container = styled.div`
 
     padding: 5rem calc((100vw - 1300px) / 2);
 
-    background: #150f0f;
+    background: rgba(0,0,0,1);
     color: #fff;
 `
 
@@ -105,24 +107,4 @@ const CardPrice = styled.p`
     margin-bottom: 1rem;
 
     font-size: 2rem;
-`
-
-const CardButton = styled.button`
-    border: none;
-    padding: 1rem 4rem;
-
-    background: #007f5f;
-    color: #fff;
-
-    font-size: 1rem;
-    
-    transition: 0.2 ease-out;
-
-    &:hover{
-        background: #80b918;
-        color: #000;
-
-        transition: 0.2s ease-out;
-        cursor: pointer;
-    }
 `
