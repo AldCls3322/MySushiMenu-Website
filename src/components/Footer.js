@@ -39,6 +39,7 @@ export const Container = styled.footer`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
     
     background-color: #0d0909;
 `

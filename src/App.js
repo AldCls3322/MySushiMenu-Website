@@ -12,11 +12,13 @@ import { useWindowScroll } from "react-use";
 
 function App() {
   const SushiSection = createRef();
+  const NigiriSection = createRef();
 
   const goToSushiSection = () => window.scrollTo( {top: SushiSection.current.offsetTop , behavior: "smooth"} );
   // window.scrollTo( {top: SushiSection.current.offsetTop , behavior: "smooth"} );
   // {top: SushiSection.current, behavior: "smooth"}
   // SushiSection.current.scrollIntoView()
+  const goToNigiriSection = () => window.scrollTo( {top: NigiriSection.current.offsetTop , behavior: "smooth"} );
 
   const { y: pageYOffset } = useWindowScroll();
   const [visible, setVisibility] = useState(false);
@@ -51,10 +53,11 @@ function App() {
     <Router>
       <GlobalStyle />
       <Navbar toggle={toggle}/>
-      <Sidebar isOpen={isOpen} toggle={toggle} goToSushiSection={goToSushiSection} visibility={visible}/>
+      <Sidebar isOpen={isOpen} toggle={toggle} goToSushiSection={goToSushiSection} goToNigiriSection={goToNigiriSection} visibility={visible}/>
       <TitleMenu goToSushiSection={goToSushiSection} />
       <Products heading="Our Artwork Sushi" collection="sushiMenu" ref={SushiSection}/>
       <Feature scrollToTop={scrollToTop}/>
+      <Products heading="Our Famous Nigiri" collection="nigiriMenu" ref={NigiriSection}/>
       <Footer />
     </Router>
   );

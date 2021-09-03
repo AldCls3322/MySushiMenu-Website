@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImgTitle from '../imgs/sushi-title.jpg';
-import database from '../firebase/config';
 
 const TitleMenu = ({goToSushiSection}) => {
     // let { extraImagesID } = useParams();
@@ -16,8 +15,25 @@ const TitleMenu = ({goToSushiSection}) => {
     // useEffect(() => {
     //     getExtraImages();
     // }, ['h9ced4u4qRMwCvsDyni9'])
-
-    // var ImgTitle = database.collection('menuFeatures').doc('h9ced4u4qRMwCvsDyni9');
+    
+    
+    // const [ImgTitle, setImgTitle] = useState()
+    // useEffect(() => {
+    //     var docRef = database.collection('menuFeatures').doc('h9ced4u4qRMwCvsDyni9');
+    //     docRef.get().then((doc) => {
+    //         if (doc.exists) {
+    //             console.log("Document data:", doc.data());
+    //             var Img = doc.data().url;
+    //             console.log(Img);
+    //             setImgTitle(Img);
+    //         } else {
+    //             // doc.data() will be undefined in this case
+    //             console.log("No such document!");
+    //         }
+    //     }).catch((error) => {
+    //         console.log("Error getting document:", error);
+    //     });
+    // }, ['menuFeatures'])
 
     return (
         <Container>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
-const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
+const Sidebar = ({isOpen, toggle, goToSushiSection, goToNigiriSection, visibility}) => {
     return (
         visibility ? 
         <Container isOpen={isOpen} onClick={toggle}>
@@ -12,7 +12,7 @@ const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
             </Icon>
             <Menu>
                 <SbLink onClick={goToSushiSection}>Sushi</SbLink>
-                <SbLink to="/">Nigiri</SbLink>
+                <SbLink onClick={goToNigiriSection}>Nigiri</SbLink>
                 <SbLink onClick={goToSushiSection}>Full Menu</SbLink>
             </Menu>
             <BottonWrap>
@@ -23,7 +23,7 @@ const Sidebar = ({isOpen, toggle, goToSushiSection, visibility}) => {
         <Container isOpen={isOpen} onClick={toggle}>
             <Menu>
                 <SbLink onClick={goToSushiSection}>Sushi</SbLink>
-                <SbLink to="/">Nigiri</SbLink>
+                <SbLink onClick={goToNigiriSection}>Nigiri</SbLink>
                 <SbLink onClick={goToSushiSection}>Full Menu</SbLink>
             </Menu>
             <BottonWrap>
