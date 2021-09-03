@@ -1,3 +1,23 @@
+# PROJECT DETAILS
+
+## Tools-Used
+
+This is an interactive app with firebase, where it gets all the products for the sushi menu. This back-end element uses the library:
+
+`npm install firebase` 
+
+It also includes styled components to make easier the CSS styling:
+
+`npm install styled-components`
+
+And finally added scrolling events:
+
+`npm install react-use`
+
+## DEPLOYED
+
+Check out the webpage [here](https://elastic-blackwell-f66664.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
